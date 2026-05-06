@@ -1,0 +1,119 @@
+@import url(sanitize.css);
+body{
+    background-color: #f0f0f0; /* 背景色をグレーに */
+    padding: 10px; /* 要素内の余白を10pxに */
+    font-size: 14px; /* 文字の大きさを 14pxに */
+    color: #666; /* 文字の色を濃い目のグレーに */
+}
+
+.container{
+    max-width: 800px; /* 幅を800pxに */
+    margin: 0 auto; /* 左右の余白をautoにして左右中央揃えに */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3); /* 影をつける */
+}
+
+header{
+    background-color: #422814; /* 背景色を茶色に */
+    padding: 10px; /* 要素内余白を10pxに */
+    color: #fff; /* 文字色を白に */
+}
+
+header h1{
+    margin: 0; /* 余白をなくす */
+    font-size: 24px; /* 文字の大きさを24pxに */
+    font-weight: normal; /* 文字の太さを普通に */
+    text-align: center; /* テキストを中央揃えに */
+}
+
+.description img{
+    float: left;
+    margin: 0 10px 10px 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.description img:hover{
+    opacity: .5;
+}
+
+.information h1{
+    font-size: 18px; /* 文字の大きさを18pxに */
+    margin: 0 10px 10px 0; /* 余白を下と右に10pxづつ */
+}
+
+.information .type{
+    display: inline; /* インラインスタイルに変更 */
+    background-color: #E35A4D; /* 背景色をピンクに */
+    padding: 3px 5px; /* 要素内余白を上下3px、左右5pxに */
+    font-size: 80%; /* 文字の大きさを少し小さく */
+    color: #FFF; /* 文字色を白に */
+}
+
+.description{
+    clear: left;
+}
+
+.content{
+    background-color: #fff; /* 背景色を白に */
+    padding: 20px; /* 要素内余白を20pxに */
+}
+
+.parag{
+    margin: 0 0 20px; /* 下の余白のみ20pxに */
+}
+
+.parag h1{
+    clear: left; /* 紹介文の画像回り込みをクリア */
+    font-size: 100%; /* フォントの大きさを本文と同じに */
+    font-weight: normal; /* フォントの太さを普通に */
+    margin: 0; /* 余白はなくす */
+    background-color: #E6E4DD; /* 背景色を薄い茶色に */
+    padding: 5px 10px; /* 要素内の余白を上下 5px、左右 10pxに */
+}
+
+.parag ol{
+    padding-left: 2em; /* 番号のスペースを確保 */
+    margin: 0; /* 余白をなくす */
+    list-style: disc inside; /* リストのスタイルを算用数字に */
+}
+
+.parag li{
+    border-bottom: 1px solid #ccc; /* 要素の下にのみ枠線を引く */
+    padding: 5px 5px; /* 要素内余白を上下5px、左右10pxに */
+    list-style-position: outside; /*改行した2行目以降も番号に揃う */
+}
+
+.align-right{
+    text-align: right;
+}
+
+.clearfix:after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+footer{
+    text-align: center;
+    font-size: 80%;
+}
+
+@media only screen and (max-width:600px){
+    .description img{
+        float: none; /* 回り込みを解除する */
+        display: block; /* 表示をブロック状態にする */
+        margin: 0 auto; /* 画像を中央に揃える */
+    }
+    header{
+        padding: 5px; /* 要素内余白を少し狭くする */
+    }
+    header h1{
+        font-size: 12px; /* 文字サイズを少し小さくする */
+    }
+    .songs li{
+        float: none; /* 回り込みを解除する */
+        width: inherit;
+    }
+}

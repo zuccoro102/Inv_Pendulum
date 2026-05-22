@@ -3,7 +3,7 @@ body{
     background-color: #f0f0f0; /* 背景色をグレーに */
     padding: 10px; /* 要素内の余白を10pxに */
     font-size: 14px; /* 文字の大きさを 14pxに */
-    color: #666; /* 文字の色を濃い目のグレーに */
+    color: #302f2f; /* 文字の色を濃い目のグレーに */
 }
 
 .container{

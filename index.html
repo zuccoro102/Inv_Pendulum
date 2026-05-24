@@ -36,7 +36,7 @@
                         </section>
                     </div>
                     <div class="col-sm-6 align-center">
-                        <a href="#"><video src="imgs/倒立振子モデル_ScreenShot_1.mp4" alt="倒立振子模型" width="220" autoplay muted>再生できません</video></a>
+                        <video src="imgs/倒立振子モデル_ScreenShot_1.mp4" alt="倒立振子模型" width="60%" autoplay muted>再生できません</video>
                         <p>完成形</p>
                     </div>
                 </div>
@@ -56,15 +56,13 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <ul>
-                                <li>Arduinoを使って制御する、2輪の「倒立振子模型」を製作する。</li>
-                                <li>この製作を通して</li>
+                                <li>Arduinoを使って制御する、2輪の「倒立振子模型」を製作する。製作を通して、</li>
                             </ul>
                             <p style="padding-left: 3em; margin: 0;">・電子回路の基礎を学ぶ</p>
                             <p style="padding-left: 3em; margin: 0;">・Arduinoで電子回路を制御する方法を体験する</p>
                             <p style="padding-left: 3em; margin: 0;">・フィードバック制御(PID制御)を知る</p>
                             <p style="padding-left: 3em; margin: 0;">・初歩的なC++言語に触れる</p>
                             <ul>
-                                <li>つまり、模型の製作を通して電子回路、コンピュータ制御、機械工学の基本を総合的に体験できる</li>
                                 <li>参考資料</li>
                             </ul>
                             <p style="padding-left: 3em; margin: 0;">・WEB上の情報。例えば、</p>
@@ -78,7 +76,7 @@
                             <P style="padding-left: 3em; margin: 0;">ChatGPT、Gemini</P>
                         </div>
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/模型1.png" alt="完成模型" width="200"></a>
+                            <img src="imgs/模型1.png" alt="完成模型" width="60%">
                             <p>完成模型</p>
                         </div>
                     </div>
@@ -90,17 +88,18 @@
                 <section class="parag">
                     <div class="row">
                         <div class="col-sm-10">
-                            <h1 id="touritsu">倒立振子モデルとは (Wikipediaより)</h1>
+                            <h1 id="touritsu">倒立振子モデルとは</h1>
                         </div>
                         <div class="col-sm-2">
                             <p style="margin-top: 15px;"><a href="#TOP">TOPへもどる</a></p>
                         </div>
                     </div>
                     <ul>
-                        <li>倒立振子(inverted pendulum)とは、支点よりも重心が高い位置にある振り子をいう</li>
-                        <li>支点を台車に載せて実装する、台車駆動型倒立振子がよく知られている。ほとんどの応用例において振り子はある回転軸まわりにのみ運動するよう固定されており、自由度は1に制限されている。</li>
+                        <li>倒立振子(inverted pendulum)とは、支点よりも重心が高い位置にある振り子をいう。</li>
+                        <li>支点を台車に載せて実装する台車駆動型倒立振子がよく知られている。ほとんどの例において振り子はある回転軸まわりにのみ運動するよう固定されており、自由度は1に制限されている。</li>
                         <li>振り子は吊り下げられた状態が安定であり、したがって倒立振子は本質的に不安定であるので、倒立状態を保つためには常に能動的に制御する必要がある。このためには支軸に直接トルクを加えたり、支点を水平方向もしくは鉛直方向に移動させることにより振り子の錘の回転速度を変化させたりしてフィードバックループを構築する。支点を動かす型の倒立振子の一番簡単な例は、箒を手の上に立たせる系である。</li>
-                        <li>倒立振子は動力学と制御論における古典的な問題であり、制御戦略の試験用ベンチマークとしてよく用いられる。</li>
+                        <li>倒立振子は動力学と制御論における古典的な問題であり、制御システムの学習に適している。</li>
+                        <li>参考：ウィキペディア等。</li>
                     </ul>
                 </section>
             </div>
@@ -117,10 +116,10 @@
                         </div>
                     </div>
                     <ul>
-                        <li>用意するもの (これら以外に制御コードを書き込むPCが要る)</li>
+                        <li>下記以外に制御コードを書き込むPCが要る</li>
                     </ul>
                     <p style="text-align: center;">
-                        <a href="#"><img src="imgs/junbi.png" alt="junbi" width=70%></a>
+                        <img src="imgs/junbi.png" alt="junbi" width=70%>
                     </p>
                 </section>
             </div>
@@ -130,7 +129,7 @@
                 <section class="parag">
                     <div class="row">
                         <div class="col-sm-10">
-                            <h1 id="ard">Arduinoとは (Wikipedia他より)</h1>
+                            <h1 id="ard">Arduinoとは</h1>
                         </div>
                         <div class="col-sm-2">
                             <p style="margin-top: 15px;"><a href="#TOP">TOPへもどる</a></p>
@@ -141,18 +140,19 @@
                         <li>主な特徴とメリット</li>
                     </ul>
                     <p style="padding-left: 3em; margin: 0;">・簡単・安価: 初心者でも扱い易い。</p>
-                    <p style="padding-left: 3em; margin: 0;">・オープンソース: 設計図が公開されており、互換機も多数存在。</p>
+                    <p style="padding-left: 3em; margin: 0;">・オープンソース: 設計図が公開されており、互換機も多数存在する。</p>
                     <p style="padding-left: 3em; margin: 0;">・汎用性: Arduino IDEでプログラムし、USBで簡単にPCから書き込み可能。</p>
                     <div class="row">
                         <div class="col-sm-7">
                             <ul>
-                                <li>今回はArduino Uno R4 Wifiを使用する。</li>
-                                <li>電子工作やプログラミングを始めたい人に最適な、世界的に普及しているマイコンボード。</li>
+                                <li>ここではArduino Uno R4 Wifiを使用する。</li>
+                                <li>電子工作やプログラミングを始めたい人に適した、世界的に普及しているマイコンボード。</li>
                                 <li>その他、「Arduinoで学ぶ電子工作」が詳しい。</li>
+                                <li>参考：ウィキペディア等。</li>
                             </ul>
                         </div>
                         <div class="col-sm-5 align-center">
-                            <a href="#"><img src="imgs/Arduino_UNO_R4_Wifi.png" alt="Arduino" width="150"></a>
+                            <img src="imgs/Arduino_UNO_R4_Wifi.png" alt="Arduino" width="60%">
                             <p>Arduino UNO R4 Wifi</p>
                         </div>
                     </div>
@@ -176,18 +176,18 @@
                             <ul>
                                 <li>電流が大きいモータはモータドライバを使って制御する。</li>
                                 <li>ここでは、モータドライバ「DRV8835」を使って、2つのモータを制御する。</li>
-                                <li>まずは参考資料「Arduinoで学ぶ電子工作」第5章-4に沿って、Arduinoを使いモータを制御してみる。</li>
-                                <li style="margin-bottom: 50px;">次に2個のモータの回転速度をPWMで制御する。配線例は右図。</li>
+                                <li style="margin-bottom: 50px;">まずは参考資料「Arduinoで学ぶ電子工作」第5章-4に沿って、Arduinoを使いモータを制御してみる。</li>
+                                <li>次に2個のモータの回転速度をPWMで制御する。配線例は右図。</li>
+                                <li>外部電源として3V乾電池ボックスを用い、モータドライバに配線する。</li>
+                                <li>ノイズ対策として電源間に470μFの電解コンデンサを取り付ける。</li>
                                 <li>Arduino IDEのスケッチ例は<a href="docs/DRV8835_test_ino.txt">DRV8835_test_ino.txt</a></li>
                                 <li>正常なら3秒毎に正転、反転を繰り返すはず。</li>
                             </ul>
                         </div>
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/DRV8835_test_1.png" alt="SRV8835_1" width="200"></a>
-                            <a href="#"><img src="imgs/DRV8835_test_2.png" alt="SRV8835_2" width="200"></a>
-                            <a href="#"><img src="imgs/DRV8835_test_3.png" alt="SRV8835_3" width="200"></a>
-                            <p style="margin: 0;">外部電源として電池ボックスとモータドライバを配線する。</p>
-                            <p style="margin: 0;">ノイズ対策として電源間に470μFの電解コンデンサを取り付ける。</p>
+                            <img src="imgs/DRV8835_test_1.png" alt="SRV8835_1" width="70%">
+                            <img src="imgs/DRV8835_test_2.png" alt="SRV8835_2" width="70%">
+                            <img src="imgs/DRV8835_test_3.png" alt="SRV8835_3" width="70%">
                         </div>
                     </div>
                 </section>
@@ -200,7 +200,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <ul>
-                                <li>倒立模型では、常にその角度、角速度を測定し、そのデータからモータを制御する必要がある。(フィードバック)</li>
+                                <li>倒立模型では、常にその角度、角速度を検出し、その値からモータを制御する必要がある。(フィードバック)</li>
                                 <li>ここでは、6軸の加速度/ジャイロセンサー「MPU6500」を用いて、角度・角速度を測定する。</li>
                                 <li>通信にはSPIを使用する。</li>
                             </ul>
@@ -210,14 +210,14 @@
                                 <li>角度等の読み込みにはMadgwickフィルタライブラリを利用する。計算が不要で便利である。</li>
                                 <li>ArduinoとMPU6500を配線する。配線例は右図。</li>
                                 <li>Arduino IDEのスケッチ例は<a href="docs/MPU6500_test_ino.txt">MPU6500_test_ino.txt</a></li>
-                                <li>シリアル通信で、ROLL、PITCH、YAW等が読めていることを確認する。このスケッチでは1秒毎に変化するはず。</li>
+                                <li>IDEのシリアル通信モニタで、ROLL、PITCH、YAW等が読めていることを確認する。このスケッチでは1秒毎に値が変化するはず。</li>
                                 <li>センサーを傾けると、値が予想通りに変化すること、安定して値が出力されることを確認する</li>
                             </ul>
                         </div>
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/MPU6500.png" alt="MPU6500_1" width="100"></a><br>
+                            <a href="#"><img src="imgs/MPU6500.png" alt="MPU6500_1" width="40%"></a><br>
                             <p> </p><br>
-                            <a href="#"><img src="imgs/MPU6500_test_1.png" alt="MPU6500_2" width="200"></a>
+                            <a href="#"><img src="imgs/MPU6500_test_1.png" alt="MPU6500_2" width="80%"></a>
                         </div>
                     </div>
                 </section>
@@ -237,20 +237,20 @@
                     <h2>モータ、ギアボックスの取付け</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/F130motor_C.png" alt="F130motor_C" width="140"></a>
-                            <p>ノイズ対策として、モータ端子間、端子ボディ間には0.1μFのコンデンサを半田付けする。</p>
-                            <p>モータはFA-130型。モータ軸のギアは8歯。</p>
-                            <p>モータ固定部品でコンデンサが外れないように注意。</p>
+                            <img src="imgs/F130motor_C.png" alt="F130motor_C" width="85%">
+                            <p>ノイズ対策として、モータ端子間、端子ボディ間には0.1μFのコンデンサをはんだ付けする。</p>
+                            <p>モータはFA-130型。モータ軸のギアは8歯である。</p>
+                            <p>モータ固定部品でコンデンサが外れないように注意。しっかりはんだ付けする。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Gearbox_front.png" alt="Gearbox_front" width="80%"></a>
-                            <a href="#"><img src="imgs/Gearbox_front2.png" alt="Gearbox_front2" width="80%"></a>
+                            <img src="imgs/Gearbox_front.png" alt="Gearbox_front" width="85%">
+                            <img src="imgs/Gearbox_front2.png" alt="Gearbox_front2" width="85%">
                             <p>ギアボックスに組み込み(ギア比は114.7:1)、ユニバーサルボードの端に固定する。</p>
-                            <p>ユニバーサルボードの端を少し切り取り、裏からパーツ(細板)とねじ止め。</p>
+                            <p>ユニバーサルボードの端を少し切り取り、裏側のバー状の部品とねじ止めする。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Gearbox_front3.png" alt="Gearbox_front3" width="80%"></a>
-                            <a href="#"><img src="imgs/Gearbox_back.png" alt="Gearbox_back" width="140"></a>
+                            <img src="imgs/Gearbox_front3.png" alt="Gearbox_front3" width="85%">
+                            <img src="imgs/Gearbox_back.png" alt="Gearbox_back" width="85%">
                             <p>タイヤは直径は55 mmのものを用いる。</p>
                         </div>
                     </div>
@@ -260,21 +260,21 @@
             <!-- 次のセクションへ　-->
             <div>
                 <section class="parag3">
-                    <h2>Arduino UNO R4 Wifi、MPU6500の取付け</h2>
+                    <h2>Arduino、MPU6500の取付け</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Arduino_front.png" alt="Arduino_front" width="80%"></a>
-                            <p>Arduinoは、ユニバーサルボート表面の、モータギアボックスの隣に両面テープで張り付ける。</p>
+                            <img src="imgs/Arduino_front.png" alt="Arduino_front" width="85%">
+                            <p>Arduinoは、ユニバーサルボート表面のモータギアボックスの隣に、両面テープでしっかり張り付ける。</p>
                             <p>模型の高さをできるだけ低くしたいので横向き(電源コネクタ、USBコネクタが横にくるように)取り付ける。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/MPU6500_back.png" alt="MPU6500_back" width="80%"></a>
-                            <p>ユニバーサルボード裏面のほぼ中央に、両面テープを使ってMPU6500を取り付ける。重心に近い位置が良い。</p>
-                            <p>素子は小型のブレッドボードに差し込み、センサーの面が、倒立振子が真っすぐ立った時にほぼ水平になるように固定する。</p>
+                            <img src="imgs/MPU6500_back.png" alt="MPU6500_back" width="85%">
+                            <p>ユニバーサルボード裏面のほぼ中央に、両面テープを使ってMPU6500を取り付ける。模型の重心に近い位置が良い。</p>
+                            <p>素子は小型のブレッドボードに差し込み、倒立振子が真っすぐ立った時にセンサーの面がほぼ水平になるように固定する。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/MPU6500_side.png" alt="MPU6500_side" width="80%"></a>
-                            <p>表面のArduinoから、裏面のMPU6500に、ユニバーサルボードの穴を通してジャンパー線が配線できるような位置にする。配線はなるべく短くする。</p>
+                            <img src="imgs/MPU6500_side.png" alt="MPU6500_side" width="85%">
+                            <p>表面のArduinoから、裏面のMPU6500に、ユニバーサルボードの穴を通してジャンパー線が配線できるような位置にする。ノイズ対策のため配線はなるべく短くしたい。</p>
                             <p>L型の部品などを使い、振動してもずれないように両側からしっかり固定する。</p>
                         </div>
                     </div>
@@ -284,22 +284,22 @@
             <!-- 次のセクションへ　-->
             <div>
                 <section class="parag3">
-                    <h2>DRV8835の取付け、配線</h2>
+                    <h2>DRV8835の取付け、Arduinoとの配線</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/DRV8835_Motor_1.png" alt="DRV8835_Motor_1" width="80%"></a>
-                            <a href="#"><img src="imgs/DRV8835_Motor_2.png" alt="DRV8835_Motor_2" width="80%"></a>
+                            <img src="imgs/DRV8835_Motor_1.png" alt="DRV8835_Motor_1" width="85%">
+                            <img src="imgs/DRV8835_Motor_2.png" alt="DRV8835_Motor_2" width="85%">
                             <p>ユニバーサルボード表面のギアボックスの上に、モータドライバDRV8835を差し込んだ小型のブレッドボードを両面テープで固定する。</p>
                             <p>ギアボックスのプラスチックケース部分に固定する。これも高さを抑えるため。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/DRV8835_Motor_circuit_1.png" alt="DRV8835_Motor_circuit_1" width="80%"></a>
+                            <img style="transform: rotate(90deg); margin: 60px 0;" src="imgs/DRV8835_Motor_circuit_1.png" alt="DRV8835_Motor_circuit_1" width="100%">
                             <p>ArduinoとモータドライバDRV8835を配線する。</p>
                             <p>電源入力部には、ノイズ対策として470 μFの電解コンデンサを取り付ける。念を入れるなら2個並列に取り付ける。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/DRV8835_Motor_circuit_2.png" alt="DRV8835_Motor_circuit_2" width="140"></a>
-                            <a href="#"><img src="imgs/DRV8835_Motor_circuit_3.png" alt="DRV8835_Motor_circuit_3" width="140"></a>
+                            <img src="imgs/DRV8835_Motor_circuit_2.png" alt="DRV8835_Motor_circuit_2" width="85%">
+                            <img src="imgs/DRV8835_Motor_circuit_3.png" alt="DRV8835_Motor_circuit_3" width="85%">
                             <p>ArduinoとモータドライバDRV8835を配線する。</p>
                         </div>
                     </div>
@@ -312,11 +312,11 @@
                     <h2>Arduinotとモータの配線</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/Motor_circuit_1.png" alt="Motor_circuit_1" width="80%"></a>
-                            <p>モータ2個とDRV8835の配線。後で回転が逆だったら赤線と黒線を入れ替えれば良い。</p>
+                            <img src="imgs/Motor_circuit_1.png" alt="Motor_circuit_1" width="80%">
+                            <p>モータ2個とDRV8835の配線。後の確認試験で回転が逆だったら赤線と黒線を入れ替えれば良い。</p>
                         </div>
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/Motor_circuit_2.png" alt="Motor_circuit_2" width="80%"></a>
+                            <img src="imgs/Motor_circuit_2.png" alt="Motor_circuit_2" width="80%">
                             <p>モータ2個とDRV8835を配線する。</p>
                             <p>ノイズの発生を抑えるため、モータのリード線は捩る。</p>
                         </div>
@@ -327,19 +327,19 @@
             <!-- 次のセクションへ　-->
             <div>
                 <section class="parag3">
-                    <h2>MPU6500の配線</h2>
+                    <h2>MPU6500とArduinoの配線</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-6 align-center">
-                            <a href="#"><img src="imgs/MPU6500_circuit_1.png" alt="MPU6500_circuit_1" width="80%"></a>
-                            <p>Arduinoと加速度・ジャイロセンサーPMU6500を配線する。</p>
+                            <img src="imgs/MPU6500_circuit_1.png" alt="MPU6500_circuit_1" width="85%">
+                            <p>ArduinoとMPU6500を配線する。</p>
                             <p>電源入力部には、ノイズ対策として10μFの電解コンデンサと0.1pFのマイカ(セラミック)コンデンサを取り付ける。</p>
                         </div>
                         <div class="col-sm-3 align-center">
-                            <a href="#"><img src="imgs/MPU6500_circuit_2.png" alt="MPU6500_circuit_2" width="80%"></a>
+                            <img src="imgs/MPU6500_circuit_2.png" alt="MPU6500_circuit_2" width="85%">
                             <p>ArduinoとMPU6500はユニバーサルボードの表と裏にあるので、ボートの穴をうまく利用する。</p>
                         </div>
                         <div class="col-sm-3 align-center">
-                            <a href="#"><img src="imgs/MPU6500_circuit_3.png" alt="MPU6500_circuit_3" width="80%"></a>
+                            <img src="imgs/MPU6500_circuit_3.png" alt="MPU6500_circuit_3" width="85%">
                             <p>ノイズが入らないように、できるだけ短い配線にする。</p>
                             <p>ノイズ対策として、グラウンドはArduinoから配線する。(スター接続)</p>
                         </div>
@@ -350,25 +350,24 @@
             <!-- 次のセクションへ　-->
             <div>
                 <section class="parag3">
-                    <h2>バッテリーの取付けとDRV8835との配線</h2>
+                    <h2>電池の取付けとDRV8835との配線</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Battery_1.png" alt="Battery_1" width="80%"></a>
-                            <p>モータ用には並列に接続してコネクタ(JST 2.0 PH 2.0mm)を取り付ける。</p>
-                            <p>その先はピンのジャンパー線を接続する。</p>
-                            <p>Arduino用には直列に接続してコネクタ(JST 2.0 PH 2.0mm)を取り付ける。</p>
-                            <p>その先にはDCプラグ(外径5.5mm、内径2.1mm)を取り付ける。</p>
+                            <img src="imgs/Battery_1.png" alt="Battery_1" width="85%">
+                            <p>電池は軽量なLiPo電池(3.7V、550mAh)である。</p>
+                            <p>モータ用に、2個の電池を並列に接続するケーブルを製作。コネクタ(JST 2.0 PH 2.0mm)を端に取り付ける(オス)。また、ピン-コネクタ( メス)のジャンパー線を作る。</p>
+                            <p>Arduino用には、2個の電池を直列に接続するケーブルを製作。コネクタを端に取り付ける(オス)。また、DCプラグ(外径5.5mm、内径2.1mm)-コネクタの(メス)ケーブルを作る。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Battery_2.png" alt="Battery_2" width="80%"></a>
-                            <p>LiPoバッテリー(3.7 V、550 mAh)を2個重ねたもの並べて二つ取り付ける。</p>
+                            <a href="#"><img src="imgs/Battery_2.png" alt="Battery_2" width="85%"></a>
+                            <p>LiPo電池を2個重ねたものを二つ並べ、ユニバーサルボード裏面のMPU6500の下側に取り付ける。</p>
                             <p>取り付け時にバッテリーを変形させないようにプラ板を保護用に張り付けた方が良い。</p>
                         </div>
                         <div class="col-sm-4 align-center">
-                            <a href="#"><img src="imgs/Battery_3.png" alt="Battery_3" width="80%"></a>
+                            <img src="imgs/Battery_3.png" alt="Battery_3" width="85%">
                             <p>モータ用(3.7V)のジャンパー線をモータドライバDRV8835に接続する。</p>
                             <p>ブレッドボード空いている穴に差し込む。</p>
-                            <p>Arduino用(7.4V)は動かす時に電源プラグに接続する。</p>
+                            <p>Arduino用(7.4V)のケーブルは動かす時に電源プラグに接続する。</p>
                         </div>
                     </div>
                 </section>
@@ -380,16 +379,13 @@
                     <h2>保護カバーを取り付けよう</h2>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-10 align-center">
-                            <a href="#"><img src="imgs/Cover.png" alt="Cover" width=85%></a>
+                            <img src="imgs/Cover.png" alt="Cover" width=85%>
                             <p>転倒してもケーブルやセンサーを壊さないようカバーを取り付けよう。</p>
-                            <p>0.5mm厚アルミ板や、プラ板、カラーボード等できるだけ軽くつくる。両面テープで取り付ける。</p>
+                            <p>0.5mm厚アルミ板や、プラ板、カラーボード等できるだけ軽くつくる。両面テープで取り付ける。"前"、"後"が容易に判別できるようにする。</p>
                         </div>
                     </div>
                     <div style="margin: 20px 10px;" class="row">
-                        <ul>
-                            <li>これで組立は終了である。</li>
-                        </ul>
-                        <p style="font-size: 150%; text-align: center; margin: 20px 10px; color: blue;">お疲れ様でした！</p>
+                        <p style="font-size: 150%; text-align: center; margin: 20px 10px; color: blue;">これで組立完了です。お疲れ様でした！</p>
                     </div>
                 </section>
             </div>
@@ -408,21 +404,27 @@
                     <ul>
                         <li>いよいよ「倒立」させて行く。</li>
                         <li>Arduino IDEの基本的スケッチ例は<a href="docs/Arduino_final_woBLE_ino.txt">Arduino_final_woBLE_ino.txt</a></li>
-                        <li>まずは、模型の基本的動作を確認する。まずはUSBは接続したままで良い。</li>
-                        <p style="padding-left: 2em; margin: 0;">・電池は充電を完了しておく。電池のケーブルのコネクタを接続する。</p>
-                        <p style="padding-left: 2em; margin: 0;">・モータ用電池をモータドライバに接続する。</p>
-                        <p style="padding-left: 2em; margin: 0;">・Arduino用の電池を電源プラグに接続する。</p>
-                        <p style="padding-left: 2em; margin: 0;">・最初は、寝かせた状態にしておき、ジャイロのオフセット補正値を取得する。(倒しておくとタイヤは回らない)</p>
+                        <li>まずは、模型の基本的動作を確認する。USBは接続したままで良い。</li>
+                        <p style="padding-left: 2em; margin: 0;">・電池は充電を完了しておく。モータ用、Arduino用のケーブルのコネクタを接続する。</p>
+                        <p style="padding-left: 2em; margin: 0;">・モータ用ジャンパー線をモータドライバに接続する。</p>
+                        <p style="padding-left: 2em; margin: 0;">・Arduino用のケーブルを電源プラグに接続する。</p>
+                        <p style="padding-left: 2em; margin: 0;">・最初は寝かせた状態にしておき、ジャイロのオフセット補正値を取得する(倒しておくとタイヤは回らない)。Arduinoのリセットボタンを押すときも同様である。</p>
                         <p style="padding-left: 2em; margin: 0;">・しばらくして、手でほぼ垂直に倒立させ、その位置から前後に傾けたら、車輪が逆方向に動くことを確認する。傾きと回転の方向は下図。</p>
                         <p style="padding-left: 2em; margin: 0;">・傾きが大きいほど車輪の回転速度が大きいことを確認する。</p>
                         <p style="padding-left: 2em; margin: 0;">・さらに傾きを大きくすると(20度以上)、回転が止まることを確認する。もどすと再度回転する。</p>
                     </ul>
                     <div style="margin: 0 10px;" class="row">
+                        <div class="col-sm-1">
+                            <p> </p>
+                        </div>
                         <div class="col-sm-10 align-center">
                             <div style="margin-top: 10px;">
                                 <img src="imgs/wheel_rotation.png" alt="wheel_rotation" width=50%>
                             </div>
                             <p>傾きと車輪の回転の向き</p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p> </p>
                         </div>
                     </div>
                 </section>
@@ -440,7 +442,7 @@
                         </div>
                     </div>
                     <ul>
-                        <li>倒立の調整前にPID制御について知ろう</li>
+                        <li>倒立の調整前にPID制御について知ろう。</li>
                         <li>参考資料：<a href="https://www.nippo-co.com/odm-kiban/odm-010/">PID制御とは？メカニズムと役割をわかりやすく解説</a></li>
                     </ul>
                     <h2 style="margin-top: 15px;">オンオフ制御</h2>
@@ -457,22 +459,22 @@
                         <p style="padding-left: 2em; margin: 0;">・P動作：Derivative (微分)</p>
                         <li>PID制御は、以下の制御式(計算式)とフロー線図によって表される。</li>
                     </ul>
-                    <div style="margin: 0 10px;" class="row">
-                        <div class="col-sm-10 align-center">
-                            <a href="#"><img src="imgs/PID_flow.png" alt="PID_flow" width=80%></a>
-                            <p>PID制御の流れ</p>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10 text-center">
+                            <img src="imgs/PID_flow.png" alt="PID_flow" class="mx-auto d-block" style="width: 80%;">
+                            <p class="nt-2">PID制御の流れ</p>
                         </div>
                     </div>
                     <ul>
                         <li>P動作とは、現在値と設定値の偏差(目標との差)に比例した操作量を比例帯内で働かす動作のこと。オンオフ動作のオーバーシュート(行き過ぎ)やアンダーシュート(戻りすぎ)といった問題を解消することができる。差が大きいほど強く働き、初期の修正を行う。</li>
                         <li>I動作は、P動作と組み合わせてPI動作として用いられる。P動作で生じたオフセット(偏差)を累積させて、その累積値に比例させた量を操作量に加えることで、誤差を補正することが可能となる。過去の偏差を累積し、比例制御だけでは残ってしまう小さな差(オフセット)を解消する。</li>
                         <li>D動作は、外乱の影響などによる急激な変化に反応して出力を修正する。今回の誤差が前回の誤差よりも大きい場合に操作量を変化させることで、急な変動にも対応することができる。 偏差の変化スピードに比例して操作量を調整し、外乱などによる急激な変化に対応し、素早く安定させる。</li>
-                        <li>PID制御による応答の様子は下図。<a href="https://e-sysnet.com/seigyo3/">PID制御とは？（比例/積分/微分）</a></li>
+                        <li>PID制御による応答の様子を下に示す。参考：<a href="https://e-sysnet.com/seigyo3/">PID制御とは？（比例/積分/微分）</a></li>
                     </ul>
-                    <div style="margin: 0 10px;" class="row">
-                        <div class="col-sm-10 align-center">
-                            <a href="#"><img src="imgs/PID_response.png" alt="PID_plot" width=60%></a>
-                            <p>PID制御による応答の様子</p>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10 text-center">
+                            <img src="imgs/PID_response.png" alt="PID_plot" class="mx-auto d-block" style="width: 60%;">
+                            <p class="nt-2">PID制御による応答の様子</p>
                         </div>
                     </div>
                 </section>
@@ -496,14 +498,23 @@
                         <li>ただし、長時間動かして電池が消耗した場合はトルクがでなくなるので充電された電池と交換が必要である。1時間程度頻繁に動かすと電池の消耗が目立つようになる。</li>
                         <li>また、ギアにはこまめに潤滑油を塗り、摩耗を防ぐことが大事である。さらに、長時間の運転では、ブラシ式モータではブラシ部の摩耗も起きるので気を付けなければならない。</li>
                         <li>FA-130型モータの定格電圧は3Vである。トルクや回転数を上げようと、あまり大きな電圧を加えないようにする。</li>
+                        <li>Arduino UNO R4 wifiの入力電圧は6〜24Vである。電池が消耗し6V以下になると停止する。</li>
                         <li>以下、スケッチ内の各種パラメータを調整し、安定に倒立させていく。</li>
                     </ul>
                     <h2 style="margin-top: 15px;">調整の基本方針</h2>
                     <ul>
-                        <li>根気強く書きのフローを繰り返す。</li>
-                        <div class="col-sm-10 align-center">
-                            <img style="margin-top: 10px;" src="imgs/tuning_flow.png" alt="tuning_flow" width=80%>
-                            <p>調整の流れ</p>
+                        <li>根気強く下記のフローを繰り返す。</li>
+                        <div style="margin: 0 10px;" class="row">
+                            <div class="col-sm-1">
+                                <p> </p>
+                            </div>
+                            <div class="col-sm-10 align-center">
+                                <img style="margin-top: 10px;" src="imgs/tuning_flow.png" alt="tuning_flow" width=80%>
+                                <p>調整の流れ</p>
+                            </div>
+                            <div>
+                                <p> </p>
+                            </div>
                         </div>
                         <li>動作の確認のポイントは倒れ方である。突然倒れる、揺れがだんだん大きくなり倒れていく、一方向に傾きそのまま倒れる、倒れはしないが一方向に動いていく、揺れが大きい、などを見極める。</li>
                         <li>揺れの様子からどのパラメータを変更すれば良いか推定し(難しいが。。)、調整後また動かしてみる。</li>
@@ -548,7 +559,7 @@
                                 <li>最初に調整するのは、調整項目の(13) target、「目標値」(バランスが取れる角度)である。</li>
                                 <li>スケッチ書き込みは、模型は倒れている状態で行う。すぐにMPU6500のオフセットの取得が始まる。その後手で倒立させて、モータがほぼ止まっている角度で手を離し、その直後の動きを確認する。</li>
                                 <li>模型がすぐに一方向にのみ倒れるようであれば、目標値がずれている。target値を調整して、倒れる方向が偏らないような値にする。後で度々微調が必要となるが、まずは粗く調整する。</li>
-                                <li>模型の重さがタイヤに対して対称なら0度近くになるが、電池やモータ等の配置が非対称なので、少し傾いた状態でバランスするはずである。上記の例では-6.7度傾いている。</li>
+                                <li>模型の重さがタイヤに対して対称なら0度近くになるが、電池やモータ等の配置が非対称なので、少し傾いた状態でバランスするはずである。右図の例では-6.7度傾いている。</li>
                             </ul>
                         </div>
                         <div class="col-sm-5 align-center">
@@ -586,6 +597,7 @@
                         </div>
                         <div class="col-sm-5 align-center">
                             <img src="imgs/Ks_plot.png" alt="Ks_plot" width="95%">
+                            <p>　　　Kpのみ　　　　　　　　Kp＋Ks</p>
                         </div>
                     </div>
                 </section>
@@ -599,7 +611,7 @@
                         <li>これまでの調整でかなり安定に倒立するはずである。</li>
                         <li>しかし、これらだけでは、「位置が徐々に移動していく」ことは防げない。</li>
                         <li>理想的には、タイヤの回転から、模型の移動速度や位置をモニターし、出力にフィードバックする必要がある。そのためには、タイヤにエンコーダ等を取付け、回転数等を測らなければならないが、ここでは使わない。</li>
-                        <li>そこでここでは、出力パワーが回転数に対応するとして、「疑似的」にフィードバックを掛ける。そのパラメータが(5) 「速度FBゲイン」Kvelと(6) 「位置FBゲイン」Kposである。</li>
+                        <li>そこで、出力パワーが回転数に対応するとして、「疑似的」にフィードバックを掛ける。そのパラメータが(5) 「速度FBゲイン」Kvelと(6) 「位置FBゲイン」Kposである。</li>
                         <li>「速度FBゲイン」Kvelと「位置FBゲイン」Kposは次式で出力パワーにフィードバックされる。</li>
                         <p style="padding-left: 2em; margin: 0;">Power = Power + Kpos * pos + Kvel * vel; // 位置のFB</p>
                         <p style="padding-left: 2em; margin: 0;">float Powerlim = constrain(Power, -255., 255.);// 255.に制限されるので</p>
@@ -658,7 +670,7 @@
                         <li>ライブラリのインストール: Arduino IDEのライブラリマネージャーで「ArduinoBLE」を検索し、インストールする。</li>
                         <li>ただし、BLTのデバイスUUID (Universally Unique Identifier) [他のシステムと重複しない一意な128bit (32桁の16進数)]は、"#"と"$"にしているので、各自設定が必要である。UUIDはサービス用と属性用の二つが必要である。UUIDの取得は、例えば、<a href="https://www.uuidgenerator.net/version4">UUIDGenerator.net</a>などのオンラインジェネレーターを利用し、バージョン4(ランダム生成)を作成する。</li>
                         <li>このスケッチでは、前後移動、左右回転がリモートコントロールが可能である。</li>
-                        <li>また、横に倒した状態(止まっている状態)で、"Kp"、"Ki"、"Kd"、"Ks"、"Kt"をリモートで(USBケーブルを使わす)変更可能である。ただし、転倒すると初期値にもどる(要改善)。また、Arduinoをリセットすると初期値に戻る。</li>
+                        <li>また、横に倒した状態(止まっている状態)で、"Kp"、"Ki"、"Kd"、"Ks"、"Kt"をリモートで(USBケーブルを使わす)変更可能である。なお、Arduinoをリセットすると初期値に戻る。</li>
                     </ul>
                     <h2 style="margin-top: 15px;">コントロール用WEBパネル</h2>
                     <ul>
@@ -687,7 +699,7 @@
                         <p style="padding-left: 3em; margin: 0;">    target_cmd += 0.8; // 少し前進する</p>
                         <p style="padding-left: 2em; margin: 0;">}</p>
                         <li>"Kp"、"kd"等のパラメータの変更は、倒れている時に「パラメータ調整部」部で例のように入力して、「送信」ボタンを押す。書き換えられたら、下部のテキスト領域に表示される。</li>
-                        <li>途中BLEが途切れたら、Arduinoのリセットボタンを押し、再度接続を試みる。</li>
+                        <li>途中BLEが途切れたら、Arduinoのリセットボタンを押し、再度接続を試みる。ただし、リセットするとパラメータは初期値に戻るので注意。</li>
                     </ul>
                     <div style="margin: 0 10px;" class="row">
                         <div class="col-sm-1">
@@ -716,13 +728,13 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Arduino等に関して全くの素人であったが、多くの関連サイトやAIに頼って始めた。かなり苦労したが、最終的にはうまく倒立させることができた。</li>
+                        <li>Arduino等に関して全くの素人であったが、多くの関連サイトやAIに頼って始めた。かなり苦労したものの、最終的にはうまく倒立させることができた。</li>
                         <li>当初最も苦労したのは加速度・ジャイロセンサーへのノイズ対策である。最初はMPU6050をI<sup>2</sup>C通信で行おうとしていたが、モータを動かさなければ問題無く値を読めたが、モータを動かすと、とたんに不安定になった。コンデンサの追加やGNDの配線路変更など行ったが解決しなかった。そこで、MPU6500に変え、SPI通信に変更したら、即解決した。</li>
-                        <li>次に問題だったのは、傾きに対するモータの応答性である。これは、模型の回転モーメント(重さ、高さ)、回転のトルク(モータのトルク、ギア比、タイヤの大きさ)等が関係し、いろいろ試行錯誤が必要だった。結局、Arduinoとモータの電源に軽量のリチウムポリマー電池を用いる、模型の高さをできるだけ抑えることが効いた。モータ電源の電圧は3.7Vで十分なトルクはあった。</li>
+                        <li>次に問題だったのは、傾きに対するモータの応答性である。これは、模型の回転モーメント(重さ、高さ)、回転のトルク(モータのトルク、ギア比、タイヤの大きさ)等が関係し、いろいろ試行錯誤が必要だった。結局、Arduinoとモータの電源に軽量のリチウムポリマー電池を用いる、模型の高さをできるだけ抑えることが効いた。モータ電源の電圧は3.7Vで十分なトルクがあった。</li>
                         <li>Madgwickフィルタの読み出しを200Hzにしたのも、角度等の検出速度を上げ、応答性を高めることに効果があった。</li>
                         <li>制御パラメータの最適化では、PIDパラメータの他、Ks(2乗成分)、Kpos(位置)が効いた。Ksを加えることで、安定度が増した。Kposでフィードバックすることにより、ほぼ一定位置で倒立させることができた。</li>
                         <li>BLEでリモートコントロールを行うと、「ロボット」感覚に近くなる。ぜひ挑戦して欲しい。</li>
-                        <li>最後に、スケッチやコントロールのプログラムなど、AI(ChatGPT、Gemini)に聞くと即座に作成してくれた。この分野ではAIが非常に有用なツールであることを改めて感じた。</li>
+                        <li>最後に、スケッチやコントロールのプログラムなど、AI(ChatGPT、Gemini)に聞くと即座に(ほぼ問題無く)作成してくれた。この分野ではAIが非常に有用なツールであることを改めて感じた。</li>
                     </ul>        
                 </section>
             </div>

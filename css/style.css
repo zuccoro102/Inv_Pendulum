@@ -106,6 +106,13 @@ header h1{
     list-style-position: outside; /*改行した2行目以降も番号に揃う */
 }
 
+.parag ul ul li{
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
 .parag ol li{
     border-bottom: 0;
     padding: 2px 2px; /* 要素内余白を上下5px、左右5pxに */
@@ -151,6 +158,19 @@ header h1{
     padding: 5px 5px; /* 要素内余白を上下5px、左右5pxに */
     list-style-position: outside; /*改行した2行目以降も番号に揃う */
 }
+
+.parag3 ul ul li{
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.parag3 ol li{
+    border-bottom: 0;
+    padding: 2px 2px; /* 要素内余白を上下5px、左右5pxに */
+    list-style-position: outside; /*改行した2行目以降も番号に揃う */
+} 
 
 .parag3 p{
     margin: 0; /* 余白をなくす */ 

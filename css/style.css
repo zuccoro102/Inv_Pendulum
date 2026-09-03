@@ -3,7 +3,7 @@ body{
     background-color: #f0f0f0; /* 背景色をグレーに */
     padding: 10px; /* 要素内の余白を10pxに */
     font-size: 14px; /* 文字の大きさを 14pxに */
-    color: #666; /* 文字の色を濃い目のグレーに */
+    color: #302f2f; /* 文字の色を濃い目のグレーに */
 }
 
 .container{
@@ -14,13 +14,14 @@ body{
 
 header{
     background-color: #422814; /* 背景色を茶色に */
-    padding: 10px; /* 要素内余白を10pxに */
+    padding: 30px; /* 要素内余白を30pxに */
+    font-size: 48px; /* 文字の大きさを36pxに */
     color: #fff; /* 文字色を白に */
 }
 
 header h1{
     margin: 0; /* 余白をなくす */
-    font-size: 24px; /* 文字の大きさを24pxに */
+    font-size: 32px; /* 文字の大きさを24pxに */
     font-weight: normal; /* 文字の太さを普通に */
     text-align: center; /* テキストを中央揃えに */
 }
@@ -39,6 +40,7 @@ header h1{
 }
 
 .information h1{
+    text-align: center;
     font-size: 18px; /* 文字の大きさを18pxに */
     margin: 0 10px 10px 0; /* 余白を下と右に10pxづつ */
 }
@@ -50,6 +52,18 @@ header h1{
     font-size: 80%; /* 文字の大きさを少し小さく */
     color: #FFF; /* 文字色を白に */
 }
+
+.information .column-list{
+    margin: 0 .5em; /* 左右にスペースを確保 */
+    display: flex;        /* フレックスボックスを有効化 */
+    flex-wrap: wrap;      /* 折り返しを許可 */
+    padding: 0;
+  }
+
+.information .column-list li {
+    width: 50%;           /* 2カラムにするため幅を50%に */
+    box-sizing: border-box; /* パディングを含めた幅計算 */
+  }
 
 .description{
     clear: left;
@@ -66,27 +80,112 @@ header h1{
 
 .parag h1{
     clear: left; /* 紹介文の画像回り込みをクリア */
-    font-size: 100%; /* フォントの大きさを本文と同じに */
-    font-weight: normal; /* フォントの太さを普通に */
-    margin: 0; /* 余白はなくす */
-    background-color: #E6E4DD; /* 背景色を薄い茶色に */
+    font-size: 120%; /* フォントの大きさを本文より少し大きく */
+    font-weight: bold; /* フォントの太さを太目に */
+    margin: 0 0 10 0; /* 余白は下に10px */
+    background-color: #e2dde6; /* 背景色を薄い茶色に */
     padding: 5px 10px; /* 要素内の余白を上下 5px、左右 10pxに */
 }
 
-.parag ol{
-    padding-left: 2em; /* 番号のスペースを確保 */
-    margin: 0; /* 余白をなくす */
-    list-style: disc inside; /* リストのスタイルを算用数字に */
+.parag h2{
+    font-size: 100%;
+    font-weight: bold; /* フォントの太さを太目に */
 }
 
-.parag li{
-    border-bottom: 1px solid #ccc; /* 要素の下にのみ枠線を引く */
-    padding: 5px 5px; /* 要素内余白を上下5px、左右10pxに */
+.parag ul{
+    padding-left: 2em; /* 番号のスペースを確保 */
+    margin: 0; /* 余白をなくす */
+    /* list-style: disc inside; /* リストのスタイルを黒丸に */
+}
+
+.parag ul li{
+    border-bottom: 1px solid #ccc; /* 要素の下に枠線を引く */
+    border-top: 1px solid #ccc; /* 要素の上に枠線を引く */;
+    padding: 5px 5px; /* 要素内余白を上下5px、左右5pxに */
+    margin-top: -1px; /* 上のボーダーに1px重ねて相殺する */
     list-style-position: outside; /*改行した2行目以降も番号に揃う */
 }
 
+.parag ul ul li{
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.parag ol li{
+    border-bottom: 0;
+    padding: 2px 2px; /* 要素内余白を上下5px、左右5pxに */
+    list-style-position: outside; /*改行した2行目以降も番号に揃う */
+} 
+
+.parag ol.bracket li{
+    border: 0;
+    list-style-type: none;
+    counter-increment: cnt; /* カウンタを増やす */
+}
+
+.parag ol.bracket li::before{
+    content: "(" counter(cnt) ") "; /* カッコ付き数字を表示 */
+}
+
+.parag3{
+    margin: 0 0 20px; /* 下の余白のみ20pxに */
+}
+
+.parag3 h1{
+    clear: left; /* 紹介文の画像回り込みをクリア */
+    font-size: 120%; /* フォントの大きさを本文より少し大きく */
+    font-weight: bold; /* フォントの太さを太目に */
+    margin: 0 0 10 0; /* 余白は下に10px */
+    background-color: #e2dde6; /* 背景色を薄い茶色に */
+    padding: 5px 10px; /* 要素内の余白を上下 5px、左右 10pxに */
+}
+
+.parag3 h2{
+    font-size: 100%;
+    font-weight: bold; /* フォントの太さを太目に */
+}
+
+.parag3 ul{
+    padding-left: 2em; /* 番号のスペースを確保 */
+    margin: 0; /* 余白をなくす */
+    /* list-style: disc inside; リストのスタイルを黒丸に */
+}
+
+.parag3 ul li{
+    border-bottom: 1px solid #ccc; /* 要素の下にのみ枠線を引く */
+    padding: 5px 5px; /* 要素内余白を上下5px、左右5pxに */
+    list-style-position: outside; /*改行した2行目以降も番号に揃う */
+}
+
+.parag3 ul ul li{
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.parag3 ol li{
+    border-bottom: 0;
+    padding: 2px 2px; /* 要素内余白を上下5px、左右5pxに */
+    list-style-position: outside; /*改行した2行目以降も番号に揃う */
+} 
+
+.parag3 p{
+    margin: 0; /* 余白をなくす */ 
+    text-align: left; /* 左寄せにする */
+}
+
+.parag3 img{
+    margin: 3px 0; /* 上下に3pxのマージン */
+}
 .align-right{
     text-align: right;
+}
+
+.align-center{
+    text-align: center;
 }
 
 .clearfix:after{

@@ -1,6 +1,5 @@
 #include <Wire.h>
 #include <MadgwickAHRS.h> //　Madgwickフィルタライブラリを取り込む (予めライブラリ"Madgwick"をインストールする)
-#include <ArduinoBLE.h> // BLEのライブラリを取り込む
 #include <SPI.h> // MPU-6500でSPIを使う
 
 // スケール定数
@@ -39,21 +38,22 @@ float vel = 0.; // 速度
 float prevPos = 0.;
 
 // pid制御パラメータの初期
-float Kp = 3000.; // Pゲイン
-float Ki = 5.0; // Iゲイン
-float Kd = 10.0; // Dゲイン
-float Ks = 50.0; // Pゲインの2乗
+float Kp = 7000.; // Pゲイン
+float Ki = 0.0; // Iゲイン
+float Kd = 5.0; // Dゲイン
+float Ks = 30.0; // Pゲインの2乗
 float Kvel = 0.0; // 速度FBゲイン0.1
-float Kpos = 0.2; // 位置FBゲイン0.5
-float Kpfilt = 0.05; // Pのfilter係数
-float Kdfilt = 0.95; // Dのfilter係数
-float Kposdec = 0.999; // posの減衰係数
-float Kpwma = 1.05; // モータAのPWMの係数、基準は1.0 右側
-float Kpwmb = 0.95; // モータBのPWMの係数、基準は1.0　左側
+float Kpos = 20.0; // 位置FBゲイン0.5
+float Kpfilt = 0.2; // Pのfilter係数
+float Kdfilt = 0.9; // Dのfilter係数
+float Kposfilt = 0.7; // posのfilter係数
+float Kposdec = 0.9; // posの減衰係数
+float Kpwma = 1.0; // モータAのPWMの係数、基準は1.0 右側
+float Kpwmb = 1.0; // モータBのPWMの係数、基準は1.0　左側
 float Kt = 0.7; // 電池の消耗を考慮する係数、最初は~0.7、最後は~1.0、pwmの係数
 
-float target = -6.6; // 目標値　大きくすると前にいく
-
+float target = -7.5; // 目標値　大きくすると前にいく
+                                           
 // 制御用
 float dt; // 処理時間
 float P, I = 0, D;
@@ -75,12 +75,6 @@ const int LOOP_US = 5000; // 200 Hz
 
 unsigned long lastControl = 0;
 unsigned long lastBle = 0;
-
-// 操作用
-float target_offset = 0.;
-float turn_offset = 0.;
-float target_cmd = 0.;
-float turn_cmd = 0.;
 
 // 状態判定
 bool isSafe = false;
@@ -155,10 +149,12 @@ void controlLoop(){
   int16_t gx_raw, gy_raw, gz_raw;
   
   // 時間差計算（秒）
-  unsigned long now = micros();
-  float dt = (now - prevMicros) / 1000000.0; // 秒の単位にする
-  dt = constrain(dt, 0.002, 0.01); // 転倒防止_20260326
-  prevMicros = now;
+  // unsigned long now = micros();
+  // float dt = (now - prevMicros) / 1000000.0; // 秒の単位にする
+  // dt = constrain(dt, 0.002, 0.01); // 転倒防止_20260326
+  // prevMicros = now;
+
+  dt = 0.005; // 0.005秒に固定
 
   // RAW値取得
   // SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));
@@ -205,7 +201,7 @@ void controlLoop(){
   
   // PID制御
   // 目標から現在の角度を引いて偏差を求める
-  target_offset = target_offset + 0.001 * (target_cmd - target_offset); // ゆっくり変化させる
+  target_offset = target_offset + 0.04 * (target_cmd - target_offset); // ゆっくり変化させる
   float P_raw = ((target + target_offset) - Pitch)/90.0; // -90～90を取るので90で割って-1.0～1.0にする
 
   // ローパスフィルタ
@@ -261,12 +257,13 @@ void controlLoop(){
 
   float Powerlim = constrain(Power, -255., 255.); // 255.に制限されるので
   pos = Kposdec * pos + Powerlim * dt; // 位置
+  pos = prevPos * Kposfilt + (1 - Kposfilt) * pos;
   vel = (pos - prevPos) / dt;
   prevPos = pos;
 
   // もしtarget_cmdがある値を持っているならpos、prevPosをゼロにする
   // if (abs(target_offset > 1.0)){
-  //  pos = 0.;
+  //   pos = 0.;
   //   prevPos = 0.;
   // }
 
@@ -274,7 +271,7 @@ void controlLoop(){
   pwm = constrain(abs((int)Power), V_MIN, V_MAX); // 255に制限する
   
   // 左右のモータの違いを考慮
-  turn_offset = turn_offset + 0.0008 * (turn_cmd - turn_offset); // ゆっくり変化させる
+  turn_offset = turn_offset + 0.008 * (turn_cmd - turn_offset); // ゆっくり変化させる
   pwma = (int)(Kpwma * pwm - turn_offset);
   pwmb = (int)(Kpwmb * pwm + turn_offset);
 
@@ -305,7 +302,7 @@ void controlLoop(){
     prevPitch = 0.;
     prevPos = 0.;
 
-    target_offset = 0.;
+  target_offset = 0.;
     turn_offset = 0.;
     target_cmd = 0.;
     turn_cmd = 0.;
@@ -326,10 +323,10 @@ void controlLoop(){
   analogWrite( ENABLE_B, pwmb ); // モータBをpwmbで動かす
 
   // 減衰
-  target_offset *= 0.9996;
-  turn_offset *= 0.9996;
-  target_cmd *= 0.9996;
-  turn_cmd *= 0.9996;
+  target_offset *= 0.99;
+  turn_offset *= 0.99;
+  target_cmd *= 0.99;
+  turn_cmd *= 0.99;
   
 }
 
